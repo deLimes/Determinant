@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="upL" type="id"/>
+    <item name="downL" type="id"/>
+    <item name="leftL" type="id"/>
+    <item name="rightL" type="id"/>
+
+    <item name="upR" type="id"/>
+    <item name="downR" type="id"/>
+    <item name="leftR" type="id"/>
+    <item name="rightR" type="id"/>
+
+</resources>

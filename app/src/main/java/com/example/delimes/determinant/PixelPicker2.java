@@ -333,19 +333,23 @@ public class PixelPicker2 extends ConstraintLayout {
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             if( event.getAction() == MotionEvent.ACTION_UP ){
+
                 autoIncrement = false;
                 autoDecrement = false;
 
-                CountDownTimer countDownTimer = new CountDownTimer(5000, 5000) {
+                new CountDownTimer(10000, 10000) {
                     @Override
                     public void onTick(long l) {
                     }
 
                     @Override
                     public void onFinish() {
-                        Size.ivLargerImage.setVisibility(View.GONE);
+                        if (!(autoIncrement || autoDecrement)) {
+                            Size.ivLargerImage.setVisibility(View.GONE);
+                        }
                     }
                 }.start();
+
 
             }
             return super.onTouchEvent(event);

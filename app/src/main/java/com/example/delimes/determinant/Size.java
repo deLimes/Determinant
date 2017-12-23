@@ -148,8 +148,8 @@ public class Size extends View {
         int xCoord = (int)point.x - side;
         int yCoord = (int)point.y - side;
 
-        Log.d("MyLogs","xCoord:"+ xCoord);
-        Log.d("MyLogs","point.x:"+ point.x);
+        //Log.d("MyLogs","xCoord:"+ xCoord);
+        //Log.d("MyLogs","point.x:"+ point.x);
 
         Bitmap bitmap = ivPhoto.getDrawingCache();
 
@@ -301,11 +301,8 @@ public class Size extends View {
             // касание завершено
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
-                // выключаем режим перетаскивания
-                dragPpoint1 = false;
-                dragPpoint2 = false;
 
-                CountDownTimer countDownTimer = new CountDownTimer(2000, 2000) {
+                new CountDownTimer(2000, 2000) {
                     @Override
                     public void onTick(long l) {
                     }
@@ -317,6 +314,10 @@ public class Size extends View {
                         }
                     }
                 }.start();
+
+                // выключаем режим перетаскивания
+                dragPpoint1 = false;
+                dragPpoint2 = false;
 
                 break;
 

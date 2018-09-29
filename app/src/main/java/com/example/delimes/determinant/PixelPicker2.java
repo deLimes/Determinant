@@ -24,10 +24,10 @@ public class PixelPicker2 extends ConstraintLayout {
 
     private Context context;
     private int textColor = Color.BLACK;
-    private long repeatDeley = 50;
+    private long repeatDeley = 100;
 
 
-    private int elementHeight = 100;
+    private int elementHeight = 200;
 
     private int elementWidth = elementHeight; // you're all squares, yo
 
@@ -93,10 +93,10 @@ public class PixelPicker2 extends ConstraintLayout {
         addView( left, elementParams );
         addView( right, elementParams );
 
-        Button equalizer = new Button(context);
-        equalizer.post(new Runnable() {
-            @Override
-            public void run() {
+//        Button equalizer = new Button(context);
+//        equalizer.post(new Runnable() {
+//            @Override
+//            public void run() {
 
                 //right
                 ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
@@ -129,8 +129,8 @@ public class PixelPicker2 extends ConstraintLayout {
                 up.setLayoutParams(params);
 
             }
-        });
-    }
+//        });
+//    }
 
     private void initUpButton(Context context){
         up = new TouchableButton( context );
@@ -345,7 +345,7 @@ public class PixelPicker2 extends ConstraintLayout {
                     @Override
                     public void onFinish() {
                         if (!(autoIncrement || autoDecrement)) {
-                            Size.ivLargerImage.setVisibility(View.GONE);
+                            Size.ivLargerImage.setVisibility(View.INVISIBLE);
                         }
                     }
                 }.start();

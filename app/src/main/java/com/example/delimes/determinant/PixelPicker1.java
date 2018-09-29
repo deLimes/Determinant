@@ -30,10 +30,10 @@ public class PixelPicker1 extends ConstraintLayout {
     public static Activity activity;
     private Context context;
     private int textColor = Color.BLACK;
-    private long repeatDeley = 50;
+    private long repeatDeley = 100;
 
 
-    private int elementHeight = 100;
+    private int elementHeight = 200;
 
     private int elementWidth = elementHeight; // you're all squares, yo
 
@@ -99,10 +99,10 @@ public class PixelPicker1 extends ConstraintLayout {
         addView( left, elementParams );
         addView( right, elementParams );
 
-        Button equalizer = new Button(context);
-        equalizer.post(new Runnable() {
-            @Override
-            public void run() {
+//        Button equalizer = new Button(context);
+//        equalizer.postOnAnimationDelayed(new Runnable() {
+//            @Override
+//            public void run() {
 
                 //down
                 ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
@@ -128,6 +128,13 @@ public class PixelPicker1 extends ConstraintLayout {
                 right.setLayoutParams(params);
 
 
+//                //up
+//                params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
+//                params.leftToRight = R.id.leftL;
+//                params.bottomToTop = R.id.leftL;
+//                params.rightToLeft = R.id.rightL;
+//                up.setLayoutParams(params);
+
                 //up
                 params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
                 params.leftToRight = R.id.leftL;
@@ -135,8 +142,8 @@ public class PixelPicker1 extends ConstraintLayout {
                 params.rightToLeft = R.id.rightL;
                 up.setLayoutParams(params);
 
-            }
-        });
+//            }
+//        }, 5000);
 
 
 
@@ -388,7 +395,7 @@ public class PixelPicker1 extends ConstraintLayout {
                     @Override
                     public void onFinish() {
                         if (!(autoIncrement || autoDecrement)) {
-                            Size.ivLargerImage.setVisibility(View.GONE);
+                            Size.ivLargerImage.setVisibility(View.INVISIBLE);
                         }
                     }
                 }.start();

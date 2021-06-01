@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Determinant</string>
+
+    <string name="etDistanceReferenceText">1.0</string>
+    <string name="etDistanceReferenceHint">Distance (m)</string>
+
+    <string name="etReferenceText">50.0</string>
+    <string name="etReferenceHint">Length (px)</string>
+
+    <string name="tvDistanceText">Distance:</string>
+    <string name="tvLengthText">Length:</string>
+    <string name="btnPhotoText">photo</string>
+
 </resources>

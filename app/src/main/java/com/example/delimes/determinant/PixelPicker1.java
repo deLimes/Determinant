@@ -7,8 +7,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -19,6 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 /**
  * Created by User on 08.12.2017.
@@ -33,7 +34,7 @@ public class PixelPicker1 extends ConstraintLayout {
     private long repeatDeley = 100;
 
 
-    private int elementHeight = 200;
+    private int elementHeight = 120;
 
     private int elementWidth = elementHeight; // you're all squares, yo
 
@@ -116,7 +117,6 @@ public class PixelPicker1 extends ConstraintLayout {
                 params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
                 params.topToBottom = R.id.upL;
                 params.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
-                params.bottomToTop = R.id.downL;
                 params.rightToLeft = R.id.downL;
                 left.setLayoutParams(params);
 
@@ -126,14 +126,6 @@ public class PixelPicker1 extends ConstraintLayout {
                 params.leftToRight = R.id.downL;
                 params.bottomToTop = R.id.downL;
                 right.setLayoutParams(params);
-
-
-//                //up
-//                params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
-//                params.leftToRight = R.id.leftL;
-//                params.bottomToTop = R.id.leftL;
-//                params.rightToLeft = R.id.rightL;
-//                up.setLayoutParams(params);
 
                 //up
                 params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
@@ -374,7 +366,7 @@ public class PixelPicker1 extends ConstraintLayout {
 
     }
 
-    class TouchableButton extends android.support.v7.widget.AppCompatImageButton {
+    class TouchableButton extends AppCompatImageButton {
 
         public TouchableButton(Context context) {
             super(context);

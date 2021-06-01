@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 /**
  * Created by User on 08.12.2017.
@@ -27,7 +29,7 @@ public class PixelPicker2 extends ConstraintLayout {
     private long repeatDeley = 100;
 
 
-    private int elementHeight = 200;
+    private int elementHeight = 120;
 
     private int elementWidth = elementHeight; // you're all squares, yo
 
@@ -98,34 +100,33 @@ public class PixelPicker2 extends ConstraintLayout {
 //            @Override
 //            public void run() {
 
-                //right
-                ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
-                params.topToBottom = R.id.upR;
-                params.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID;
-                params.leftToRight = R.id.downR;
-                params.bottomToTop = R.id.downR;
-                right.setLayoutParams(params);
-
                 //down
-                params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
-                //params.topToBottom = R.id.rightR;
+                ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
                 params.rightToLeft = R.id.rightR;
-                params.leftToRight = R.id.leftR;
                 params.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
+                //params.rightToLeft = R.id.leftR;
                 down.setLayoutParams(params);
+
+
+                //right
+                params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
+                params.bottomToTop = R.id.downR;
+                params.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID;
+                right.setLayoutParams(params);
 
                 //left
                 params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
-                params.topToBottom = R.id.upR;
                 params.rightToLeft = R.id.downR;
                 params.bottomToTop = R.id.downR;
                 left.setLayoutParams(params);
 
+
+
                 //up
                 params = new ConstraintLayout.LayoutParams( elementHeight, elementWidth );
-                //params.leftToRight = R.id.leftR;
+                params.leftToLeft = R.id.downR;
                 params.bottomToTop = R.id.rightR;
-                params.rightToLeft = R.id.rightR;
+                params.leftToRight = R.id.leftR;
                 up.setLayoutParams(params);
 
             }
@@ -324,7 +325,7 @@ public class PixelPicker2 extends ConstraintLayout {
         Size.showResult();
     }
 
-    class TouchableButton extends android.support.v7.widget.AppCompatImageButton {
+    class TouchableButton extends AppCompatImageButton {
 
         public TouchableButton(Context context) {
             super(context);

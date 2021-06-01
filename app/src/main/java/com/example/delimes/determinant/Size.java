@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -18,6 +17,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,9 +135,7 @@ public class Size extends View {
             PixelPicker2.setMaximumHeight(ivPhoto.getHeight() - side - 1);
             PixelPicker2.setMaximumWidth(ivPhoto.getWidth() - side - 1);
             ////////////////////////setDrawingCacheEnabled(true);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
-                ivLargerImage.animate().scaleX(5.0f).scaleY(5.0f).setDuration(0);
-            }
+            ivLargerImage.animate().scaleX(5.0f).scaleY(5.0f).setDuration(0);
         }
 
         //////////////////////////////////////destroyDrawingCache();
